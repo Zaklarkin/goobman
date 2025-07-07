@@ -73,10 +73,10 @@ function gameLoop() {
 }
 
 document.addEventListener("keydown", e => {
-  if (e.key === "W"    && velocity.y === 0) velocity = { x: 0,  y: -1 };
-  if (e.key === "S"  && velocity.y === 0) velocity = { x: 0,  y:  1 };
-  if (e.key === "A"  && velocity.x === 0) velocity = { x: -1, y:  0 };
-  if (e.key === "D" && velocity.x === 0) velocity = { x:  1, y:  0 };
+  if (e.key === "w"    && velocity.y === 0) velocity = { x: 0,  y: -1 };
+  if (e.key === "s"  && velocity.y === 0) velocity = { x: 0,  y:  1 };
+  if (e.key === "a"  && velocity.x === 0) velocity = { x: -1, y:  0 };
+  if (e.key === "d" && velocity.x === 0) velocity = { x:  1, y:  0 };
 });
 
 gameLoop();
