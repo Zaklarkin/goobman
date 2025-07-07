@@ -72,11 +72,23 @@ function gameLoop() {
   });
 }
 
+
 document.addEventListener("keydown", e => {
-  if (e.key === "w"    && velocity.y === 0) velocity = { x: 0,  y: -1 };
-  if (e.key === "s"  && velocity.y === 0) velocity = { x: 0,  y:  1 };
-  if (e.key === "a"  && velocity.x === 0) velocity = { x: -1, y:  0 };
-  if (e.key === "d" && velocity.x === 0) velocity = { x:  1, y:  0 };
+  const key = e.key.toLowerCase(); // normalize
+
+  if (key === "w" && velocity.y === 0) {
+    velocity = { x: 0, y: -1 };
+  }
+  if (key === "s" && velocity.y === 0) {
+    velocity = { x: 0, y:  1 };
+  }
+  if (key === "a" && velocity.x === 0) {
+    velocity = { x: -1, y: 0 };
+  }
+  if (key === "d" && velocity.x === 0) {
+    velocity = { x:  1, y: 0 };
+  }
 });
 
 gameLoop();
+
