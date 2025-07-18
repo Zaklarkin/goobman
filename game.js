@@ -133,10 +133,21 @@ function gameLoop() {
   timer = setTimeout(gameLoop, speed);
 }
 
-// keyboard controls
+
+
 document.addEventListener("keydown", e => {
-  if (e.key === "ArrowUp"    && velocity.y === 0) velocity = { x: 0, y: -1 };
-  if (e.key === "ArrowDown"  && velocity.y === 0) velocity = { x: 0, y:  1 };
-  if (e.key === "ArrowLeft"  && velocity.x === 0) velocity = { x: -1, y: 0 };
-  if (e.key === "ArrowRight" && velocity.x === 0) velocity = { x:  1, y: 0 };
+  // if it’s one of the arrow keys, stop the browser from scrolling
+  if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
+    e.preventDefault();
+  }
+
+  // now only use WASD for your snake
+  if (e.key === "w" && velocity.y === 0) velocity = { x: 0,  y: -1 };
+  if (e.key === "s" && velocity.y === 0) velocity = { x: 0,  y:  1 };
+  if (e.key === "a" && velocity.x === 0) velocity = { x: -1, y:  0 };
+  if (e.key === "d" && velocity.x === 0) velocity = { x:  1, y:  0 };
 });
+
+
+
+
